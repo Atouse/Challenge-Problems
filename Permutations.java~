@@ -1,0 +1,61 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Permutations{
+  public static void main(String[]args){
+    Scanner s=new Scanner(System.in);
+    
+    System.out.println("Enter a word");
+    String word=s.nextLine();
+    String temp="n";
+    String [] checkList=new String[factorial(word.length())];
+    int counter=0;
+    for(int i=0;i<factorial(word.length());i++){
+      temp=scramble(word);
+      while(lookFor(checkList,temp))
+        temp=scramble(word);
+
+      checkList[counter]=temp;
+      System.out.println(checkList[counter]);
+      counter++;
+    }//for i
+  }//niam
+  
+ public static int factorial(int number) {
+   int result = 1;
+   
+   for (int factor=2;factor<=number;factor++)
+     result*=factor;
+   
+   return result;
+ }//factorial method
+   
+  public static boolean lookFor(String [] list, String key){
+    for(int i=0;i<list.length;i++){
+      if(key.equals(list[i]))
+        return true;
+    }
+    return false;
+  }//lookFor method
+ 
+ public static String scramble(String word){
+   StringBuffer s=new StringBuffer("");
+   int random;
+   int index[]=new int[word.length()];
+   for(int i=0;i<word.length();i++){
+     index[i]=i;
+   }
+   
+   for(int i=0;i<word.length();i++){
+     random=(int)(Math.random()*word.length());
+     while(index[random]<0){
+       random=(int)(Math.random()*word.length());
+     }
+     s.append(word.charAt(index[random]));
+     index[random]=-1;
+     
+     
+   }
+   return s.toString();
+ }//scramble method
+}

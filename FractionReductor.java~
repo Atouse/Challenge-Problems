@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class FractionReductor{
+  public static void main(String args[]){
+    Scanner s=new Scanner(System.in);
+    
+    int commonFactor=0;
+    
+    System.out.println("What is the numerator?");
+    long numerator=s.nextLong();
+    
+    System.out.println("What is the denominator?");
+    long denominator=s.nextLong();
+    
+    int d=Integer.parseInt(denominator/2.0);
+    for(int i=denominator/2;i>1;i--){
+      if(numerator%i==0&&denominator%i==0){
+        commonFactor=i;
+        break;
+      }
+    }
+    
+    System.out.println(numerator/commonFactor+"/"+denominator/commonFactor);
+  }
+}
+        
+      
+  

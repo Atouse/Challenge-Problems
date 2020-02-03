@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.util.Math;
+public class SlotMachine{
+  public static void main(String[]args){
+    Scanner s = new Scanner(System.in);
+    
+    int [] slots=new int[3];
+    String again=s.nextLine();
+    while(again==null){
+      for(int i=0;i<3;i++){
+        slots[i]=(int)(Math.random()*7)+1;
+      }//for
+    }//while
+  }//niam
+}//ssalc
+      
+      
+    

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+import class ARayManipulator{
+  public static void main(String[]args){
+    Scanner s=new Scanner(System.in);
+    
+    char[] list=new char[0];
+    
+  }
+  public static char[] add(char[] array, char addition){
+    char[] copy=new char[array.length+1];
+    for(int i=0;i<copy.length;i++){
+      if(i!=copy.length-1)
+        copy[i]=array[i];
+      else
+        copy[i]=addition;
+    }//for
+  }//add method
+}//ssalc

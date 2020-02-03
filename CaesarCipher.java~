@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class CaeserCipher{
+  public static void main(String[]args){
+    Scanner s=new Scanner(System.in);
+    
+    System.out.println("Enter the cipher");
+    String code=s.nextLine();
+    
+    System.out.println("What is the shift?");
+    int shift=s.nextInt();
+    
+    StringTokenizer sentence=new StringTokenizer(code);
+    while(sentence.hasMoreTokens()){
+      System.out.print(decode(sentence.nextToken(),shift)+" ");
+    }
+  }
+  public static String decode(String code, int shift){
+    StringBuffer s=new StringBuffer("");
+
+    code=code.toLowerCase();
+    char[] letters=code.toCharArray();
+
+    for(int i=0;i<letters.length;i++){
+      if(letters[i]>97&&letters[i]<123){
+        letters[i]-=5;
+        if(letters[i]<97)
+          letters[i]+=26;
+      }
+     
+      s.append(letters[i]);
+    }
+
+    return s.toString();
+  }
+  
+}
+      
+      
+      

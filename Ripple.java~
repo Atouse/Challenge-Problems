@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Ripple{
+  public static void main(String args[]){
+    
+    Scanner s=new Scanner(System.in);//declares the Scanner object
+    String again;
+    do{
+      System.out.println("What word do you want to ripple?");//asks the user for input
+      
+      String word=s.nextLine();//receives the word from the user
+      
+      
+      for(int i=0;i<=word.length();i++){
+        System.out.println(word.substring(0,i));
+      }
+      for(int i=word.length()-1;i>0;i--){
+        System.out.println(word.substring(0,i));
+      }
+      System.out.println("Do you want to ripple another word?(yes/no)");
+      again=s.nextLine();
+    }while(again.equals("yes"));//while
+  }//niam
+}//ssalc
+                         
+    
